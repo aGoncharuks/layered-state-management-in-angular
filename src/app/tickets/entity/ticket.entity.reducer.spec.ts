@@ -1,4 +1,4 @@
-import { reducer, initialState } from './ticket.reducer';
+import { reducer, initialState } from './ticket.entity.reducer';
 
 describe('Ticket Reducer', () => {
   describe('unknown action', () => {

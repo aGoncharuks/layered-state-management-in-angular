@@ -1,17 +1,17 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { Ticket } from './ticket.model';
-import * as TicketActions from './ticket.actions';
+import { Ticket } from '../ticket.model';
+import * as TicketActions from './ticket.entity.actions';
 
 export const ticketsFeatureKey = 'tickets';
 
-export interface State extends EntityState<Ticket> {
+export interface TicketsEntityState extends EntityState<Ticket> {
   // additional entities state properties
 }
 
 export const adapter: EntityAdapter<Ticket> = createEntityAdapter<Ticket>();
 
-export const initialState: State = adapter.getInitialState({
+export const initialState: TicketsEntityState = adapter.getInitialState({
   // additional entity state properties
 });
 
@@ -57,3 +57,10 @@ export const {
   selectAll,
   selectTotal,
 } = adapter.getSelectors();
+
+export const selectTicketsEntityState = createFeatureSelector<TicketsEntityState>('tickets');
+
+export const selectAllTickets = createSelector(
+  selectTicketsEntityState,
+  selectAll
+)

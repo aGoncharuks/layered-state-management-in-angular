@@ -6,12 +6,12 @@ import {
   MetaReducer
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import * as fromTicket from '../tickets/entity/ticket.reducer';
+import * as fromTicket from '../tickets/entity/ticket.entity.reducer';
 
 
 export interface State {
 
-  [fromTicket.ticketsFeatureKey]: fromTicket.State;
+  [fromTicket.ticketsFeatureKey]: fromTicket.TicketsEntityState;
 }
 
 export const reducers: ActionReducerMap<State> = {

@@ -1,53 +1,54 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 
-import { Ticket } from './ticket.model';
+import { Ticket } from '../ticket.model';
+
 
 export const loadTickets = createAction(
-  '[Ticket/API] Load Tickets', 
+  '[Ticket/Entity] Load Tickets',
   props<{ tickets: Ticket[] }>()
 );
 
 export const addTicket = createAction(
-  '[Ticket/API] Add Ticket',
+  '[Ticket/Entity] Add Ticket',
   props<{ ticket: Ticket }>()
 );
 
 export const upsertTicket = createAction(
-  '[Ticket/API] Upsert Ticket',
+  '[Ticket/Entity] Upsert Ticket',
   props<{ ticket: Ticket }>()
 );
 
 export const addTickets = createAction(
-  '[Ticket/API] Add Tickets',
+  '[Ticket/Entity] Add Tickets',
   props<{ tickets: Ticket[] }>()
 );
 
 export const upsertTickets = createAction(
-  '[Ticket/API] Upsert Tickets',
+  '[Ticket/Entity] Upsert Tickets',
   props<{ tickets: Ticket[] }>()
 );
 
 export const updateTicket = createAction(
-  '[Ticket/API] Update Ticket',
+  '[Ticket/Entity] Update Ticket',
   props<{ ticket: Update<Ticket> }>()
 );
 
 export const updateTickets = createAction(
-  '[Ticket/API] Update Tickets',
+  '[Ticket/Entity] Update Tickets',
   props<{ tickets: Update<Ticket>[] }>()
 );
 
 export const deleteTicket = createAction(
-  '[Ticket/API] Delete Ticket',
+  '[Ticket/Entity] Delete Ticket',
   props<{ id: string }>()
 );
 
 export const deleteTickets = createAction(
-  '[Ticket/API] Delete Tickets',
+  '[Ticket/Entity] Delete Tickets',
   props<{ ids: string[] }>()
 );
 
 export const clearTickets = createAction(
-  '[Ticket/API] Clear Tickets'
+  '[Ticket/Entity] Clear Tickets'
 );
